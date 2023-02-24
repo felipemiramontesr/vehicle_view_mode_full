@@ -1,0 +1,111 @@
+/* Styles for Vehicle Card */
+
+$color-primary: #2f6690;
+$color-secondary: #3a7ca5;
+$color-background: #d9dcd6;
+$color-accent: #16425b;
+$color-accent-light: #81c3d7;
+
+.vehicle-card {
+  background-color: $color-background;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin: 10px;
+  overflow: hidden;
+
+  &-image {
+    flex: 0 0 400px;
+    height: 100%;
+    position: relative;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &-info {
+    padding: 20px;
+    position: relative;
+    width: calc(100% - 400px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.03);
+      z-index: -1;
+    }
+
+    &-title {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 10px;
+
+      &-brand {
+        color: $color-primary;
+        margin-right: 10px;
+      }
+
+      &-model,
+      &-year {
+        color: $color-accent;
+        margin-right: 10px;
+      }
+    }
+
+    &-id {
+      font-size: 16px;
+      margin-bottom: 10px;
+
+      a {
+        color: $color-secondary;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          color: $color-primary;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &-status {
+      font-size: 16px;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+
+      &.sold {
+        color: $color-accent-light;
+      }
+
+      &.available {
+        color: $color-primary;
+      }
+
+      &.reserved {
+        color: $color-accent;
+      }
+    }
+
+    &-responsible {
+      font-size: 16px;
+      margin-bottom: 10px;
+
+      span {
+        font-weight: 500;
+        margin-right: 10px;
+      }
+    }
+
+    &-description {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  }
+}

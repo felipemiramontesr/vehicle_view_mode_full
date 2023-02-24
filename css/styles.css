@@ -1,0 +1,88 @@
+/* Styles for Vehicle Card */
+.vehicle-card {
+  background-color: #d9dcd6;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin: 10px;
+  overflow: hidden;
+}
+.vehicle-card-image {
+  flex: 0 0 400px;
+  height: 100%;
+  position: relative;
+}
+.vehicle-card-image img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.vehicle-card-info {
+  padding: 20px;
+  position: relative;
+  width: calc(100% - 400px);
+}
+.vehicle-card-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.03);
+  z-index: -1;
+}
+.vehicle-card-info-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.vehicle-card-info-title-brand {
+  color: #2f6690;
+  margin-right: 10px;
+}
+.vehicle-card-info-title-model, .vehicle-card-info-title-year {
+  color: #16425b;
+  margin-right: 10px;
+}
+.vehicle-card-info-id {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.vehicle-card-info-id a {
+  color: #3a7ca5;
+  text-decoration: none;
+  font-weight: 500;
+}
+.vehicle-card-info-id a:hover {
+  color: #2f6690;
+  text-decoration: underline;
+}
+.vehicle-card-info-status {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.vehicle-card-info-status.sold {
+  color: #81c3d7;
+}
+.vehicle-card-info-status.available {
+  color: #2f6690;
+}
+.vehicle-card-info-status.reserved {
+  color: #16425b;
+}
+.vehicle-card-info-responsible {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.vehicle-card-info-responsible span {
+  font-weight: 500;
+  margin-right: 10px;
+}
+.vehicle-card-info-description {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/*# sourceMappingURL=styles.css.map */

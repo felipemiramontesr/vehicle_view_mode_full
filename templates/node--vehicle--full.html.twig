@@ -1,0 +1,36 @@
+{{ attach_library("vehicle_view_mode_full/vehicle_view_mode_full-styles") }}
+{% set legalId = node.title.value %}
+{% set brand = node.field_brand.value %}
+{% set model = node.field_model.value %}
+{% set year = node.field_year.value %}
+{% set status = node.field_status.value %}
+
+<div class="vehicle-card">
+  <div class="vehicle-card-image">
+    {% if node.field_cover.value %}
+      <img
+        src="{{ file_url(node.field_cover.entity.field_media_image.entity.fileuri) }}"
+        alt="{{ node.field_cover.entity.field_media_image.alt }}"
+      />
+    {% endif %}
+  </div>
+  <div class="vehicle-card-info">
+    <div class="vehicle-card-title">
+      <div class="vehicle-card-brand">{{ brand }}</div>
+      <div class="vehicle-card-model">{{ model }}</div>
+      <div class="vehicle-card-year">{{ year }}</div>
+    </div>
+    {% if node.title.value %}
+      <div class="vehicle-card-id">
+        <a href="{{ path('entity.node.canonical', { node: node.id }) }}">{{
+          node.title.value
+        }}</a>
+      </div>
+    {% endif %}
+    <div class="vehicle-card-status">{{ status }}</div>
+    {% if node.field_responsible %}
+      <div class="vehicle-card-responsible">{{ content.field_responsible }}</div>
+    {% endif %}
+    <div class="vehicle-card-description">{{ content.body }}</div>
+  </div>
+</div>
